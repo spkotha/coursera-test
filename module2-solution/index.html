@@ -1,1 +1,73 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .section {
+            position: relative;
+            border: 1px solid black;
+            padding-top: 40px; /* Space for title */
+            padding-left: 10px; /* Inner spacing */
+            padding-right: 10px; /* Inner spacing */
+        }
+        .section-title {
+            position: absolute;
+            top: -1px; /* Align with border */
+            right: -1px; /* Align with border */
+            background-color: #ffcccb; /* Default color */
+            color: black; 
+            padding-left: 5px;
+            padding-right: 5px;
+            border: 1px solid black;
+        }
+        .section:nth-child(2) .section-title {
+            background-color: #ffb6c1; /* Different color for Beef */
+        }
+        .section:nth-child(3) .section-title {
+            background-color: #add8e6; /* Different color for Sushi */
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container {
+                flex-direction: row;
+            }
+            .section {
+                flex-basis: calc(50% - 10px); /* Two sections per row */
+            }
+            .section:nth-child(3) {
+                flex-basis: 100%; /* Full width for third section */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section" style="background-color: #f0e68c;">
+            <div class="section-title">Chicken</div>
+            <p>Dummy text for Chicken section.</p>
+        </div>
+        <div class="section" style="background-color: #f5deb3;">
+            <div class="section-title">Beef</div>
+            <p>Dummy text for Beef section.</p>
+        </div>
+        <div class="section" style="background-color: #e0ffff;">
+            <div class="section-title">Sushi</div>
+            <p>Dummy text for Sushi section.</p>
+        </div>
+    </div>
+</body>
+</html>
