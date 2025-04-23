@@ -14,7 +14,6 @@ body {
     padding-top: 40px; /* Space for title */
     padding-left: 10px; /* Inner spacing */
     padding-right: 10px; /* Inner spacing */
-    height: 1000px; /* Tall section */
     background-color: #f0e68c; /* Background color */
 }
 
@@ -29,11 +28,16 @@ body {
     border: 1px solid black;
 }
 
+#beef .section-title {
+    background-color: #ffb6c1; /* Different color for Beef */
+}
+
+#sushi .section-title {
+    background-color: #add8e6; /* Different color for Sushi */
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
     .section {
-        flex-basis: calc(50% - 10px); /* Two sections per row */
-    }
-    .section:nth-child(3) {
-        flex-basis: 100%; /* Full width for third section */
+        flex-basis: 100%; /* Full width for each section */
     }
 }
